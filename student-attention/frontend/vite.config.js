@@ -7,4 +7,24 @@ export default defineConfig({
   server: {
     open: true
   },
+  build: {
+    rollupOptions: {
+      output: {
+        html: {
+          tags: {
+            meta: [
+              {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+              }
+            ],
+            title: {
+              tag: 'title',
+              content: 'Atención al Alumno FESC-UNAM'
+            }
+          }
+        }
+      }
+    }
+  }
 })
