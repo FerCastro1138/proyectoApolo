@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import { Diversity1Rounded } from '@mui/icons-material';
 
 
 const pages = ['Blog', 'About us', 'Services'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export const AppBarComponent = () => {
+
+    const [anchorElUser, setAnchorElUser] = useState(null);
+
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+    
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+
     return (
     <>
     <AppBar position='fixed'>
