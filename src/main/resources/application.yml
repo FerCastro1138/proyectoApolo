@@ -19,7 +19,7 @@ spring:
     password: password_orientacion
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDBDialect
