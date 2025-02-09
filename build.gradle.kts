@@ -1,9 +1,7 @@
 plugins {
-    kotlin("jvm") version "1.9.25"
-    kotlin("plugin.spring") version "1.9.25"
+    id ("java")
     id("org.springframework.boot") version "3.4.2"
     id("io.spring.dependency-management") version "1.1.7"
-    kotlin("plugin.jpa") version "1.9.25"
 }
 
 group = "com.fesc"
@@ -21,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    compileOnly ("org.projectlombok:lombok:1.18.36")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -37,17 +36,17 @@ dependencies {
     }
 }
 
-kotlin {
+/*kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
-}
+} */
 
-allOpen {
+/*allOpen {
     annotation("jakarta.persistence.Entity")
     annotation("jakarta.persistence.MappedSuperclass")
     annotation("jakarta.persistence.Embeddable")
-}
+}*/
 
 tasks.withType<Test> {
     useJUnitPlatform()

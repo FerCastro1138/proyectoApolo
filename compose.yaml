@@ -26,6 +26,17 @@ services:
     # No necesitas mapear el puerto 3306 aquí. El backend se comunica con la BD dentro de la red Docker
     # volumes: # No es necesario volver a definir el volumen aquí.
 
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    # restart: always
+    ports:
+      - 5173:5173
+    depends_on:
+      - backend
+      
+
 volumes:
   mariadb_data:
     driver: local
