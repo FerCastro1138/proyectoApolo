@@ -25,6 +25,8 @@ services:
       DATABASE_PASSWORD: password_orientacion
     # No necesitas mapear el puerto 3306 aquí. El backend se comunica con la BD dentro de la red Docker
     # volumes: # No es necesario volver a definir el volumen aquí.
+    volumes:
+      - ./src/main/resources/application.yml:/app/application.yml/
 
   frontend:
     build:
