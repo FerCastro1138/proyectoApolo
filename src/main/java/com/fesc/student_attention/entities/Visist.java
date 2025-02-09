@@ -10,8 +10,8 @@ import java.time.LocalTime;
 @Table(name = "visits")
 @Getter @Setter
 @ToString @EqualsAndHashCode
-@RequiredArgsConstructor
-public class Visists {
+@NoArgsConstructor @AllArgsConstructor
+public class Visist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

@@ -1,10 +1,7 @@
 package com.fesc.student_attention.entities;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -13,6 +10,7 @@ import java.util.Date;
 @Table(name = "users")
 @Getter @Setter
 @EqualsAndHashCode @ToString
+@NoArgsConstructor @AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +25,8 @@ public class User {
     private String secondLastName;
     @Column(name = "email", length = 254)
     private String email;
-    @Column(name = "password", length = 64)
-    private char password;
+    @Column(name = "password", length = 255, nullable = false)
+    private String password;
     @Column(name = "address", length = 100)
     private String address;
     @Column(name = "gender", length = 10)

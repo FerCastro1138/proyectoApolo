@@ -2,10 +2,7 @@ package com.fesc.student_attention.entities;
 
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.Type;
 
 import java.util.Map;
@@ -14,7 +11,8 @@ import java.util.Map;
 @Table(name = "expedients")
 @Getter @Setter
 @ToString @EqualsAndHashCode
-public class Expedients {
+@NoArgsConstructor @AllArgsConstructor
+public class Expedient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

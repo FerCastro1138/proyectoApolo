@@ -7,8 +7,8 @@ import lombok.*;
 @Table(name = "schedules")
 @Getter @Setter
 @ToString @EqualsAndHashCode
-@RequiredArgsConstructor
-public class Schedules {
+@NoArgsConstructor @AllArgsConstructor
+public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

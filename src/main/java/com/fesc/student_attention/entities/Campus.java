@@ -4,16 +4,14 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "status")
+@Table(name = "campus")
 @Getter @Setter
 @ToString @EqualsAndHashCode
-@NoArgsConstructor @AllArgsConstructor
-public class Status {
+@NoArgsConstructor  @AllArgsConstructor
+public class Campus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "name", length = 10)
-    private String name;
-    @Column(name = "description", length = 50)
-    private String description;
+    @Column(name = "nombre", length = 25)
+    private String nombre;
 }
