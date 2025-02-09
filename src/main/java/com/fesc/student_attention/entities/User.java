@@ -37,10 +37,10 @@ public class User {
     private LocalDate dateOfBirth;
     @Column(name = "number" , length = 10)
     private String number;
-    @Column(name = "status_id")
+    @JoinColumn(name = "status_id", nullable = false)
     private int statusId;
-    @Column(name = "role_id")
+    @JoinColumn(name = "role_id", nullable = false)
     private int roleId;
-    @Column(name = "campus_id")
+    @JoinColumn(name = "campus_id", nullable = false)
     private int campusId;
 }
