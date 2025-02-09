@@ -20,8 +20,13 @@ public class Therapist {
     private String password;
     @Column(name = "area", length = 255)
     private String area;
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
     @JoinColumn(name = "status_id", nullable = false)
     private int statusId;
     @JoinColumn(name = "campus_id", nullable = false)
     private int campusId;
+    @JoinColumn(name = "role_id", nullable = false)
+    private int roleId;
 }

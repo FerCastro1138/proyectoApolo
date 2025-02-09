@@ -21,6 +21,8 @@ public class Expedient {
     @Type(JsonType.class)
     @Column(name = "form_answers", columnDefinition = "json")
     private Map<String, Object> formAnswers;
+    @JoinColumn(name = "patient_id", nullable = false)
     private int patientID;
+    @JoinColumn(name = "prioirty_id", nullable = false)
     private int priorityId;
 }

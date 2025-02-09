@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "users")
@@ -35,6 +34,9 @@ public class User {
     private LocalDate dateOfBirth;
     @Column(name = "number" , length = 10)
     private String number;
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
     @JoinColumn(name = "status_id", nullable = false)
     private int statusId;
     @JoinColumn(name = "role_id", nullable = false)
