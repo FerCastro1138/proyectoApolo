@@ -27,6 +27,4 @@ public class Therapist {
     private int statusId;
     @JoinColumn(name = "campus_id", nullable = false)
     private int campusId;
-    @JoinColumn(name = "role_id", nullable = false)
-    private int roleId;
 }

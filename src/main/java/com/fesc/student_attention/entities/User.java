@@ -39,8 +39,6 @@ public class User {
     private Role role;
     @JoinColumn(name = "status_id", nullable = false)
     private int statusId;
-    @JoinColumn(name = "role_id", nullable = false)
-    private int roleId;
     @JoinColumn(name = "campus_id", nullable = false)
     private int campusId;
 }
