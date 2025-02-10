@@ -25,6 +25,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.vladmihalcea:hibernate-types-60:2.21.1")
+    implementation("org.springframework.boot:spring-boot-starter-security:3.4.2")
     // implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     // implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
