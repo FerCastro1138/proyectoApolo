@@ -1,5 +1,6 @@
-package com.fesc.student_attention.entities;
+package com.fesc.student_attention.repositories;
 
+import com.fesc.student_attention.entities.Expedient;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
