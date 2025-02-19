@@ -47,7 +47,7 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Campus campus;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Visist> visistList = new ArrayList<>();
+    private List<Visit> visitList = new ArrayList<>();
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Expedient> expedientList = new ArrayList<>();
 }

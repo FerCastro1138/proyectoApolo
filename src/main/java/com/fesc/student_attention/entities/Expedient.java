@@ -34,5 +34,5 @@ public class Expedient {
     @JoinColumn(name = "prioirty_id", nullable = false)
     private Priority priority;
     @OneToMany(mappedBy = "expedient", orphanRemoval = true)
-    private List<Visist> visistList = new ArrayList<>();
+    private List<Visit> visitList = new ArrayList<>();
 }

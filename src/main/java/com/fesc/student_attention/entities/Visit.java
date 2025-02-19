@@ -11,7 +11,7 @@ import java.time.LocalTime;
 @Getter @Setter
 @ToString @EqualsAndHashCode
 @NoArgsConstructor @AllArgsConstructor
-public class Visist {
+public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
