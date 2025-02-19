@@ -13,7 +13,7 @@ public class Priority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", length = 15)
+    @Column(name = "name", length = 15, nullable = false)
     private String name;
     @Column(name = "description", length = 50)
     private String description;

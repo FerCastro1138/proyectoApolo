@@ -19,12 +19,12 @@ public class Expedient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "folio", length = 8)
+    @Column(name = "folio", length = 8, nullable = false, unique = true)
     private String folio;
     @Type(JsonType.class)
-    @Column(name = "form_answers", columnDefinition = "json")
+    @Column(name = "form_answers", columnDefinition = "json", nullable = false)
     private Map<String, Object> formAnswers;
-    @Column(name = "average")
+    @Column(name = "average", nullable = false)
     private int average;
 
     @ManyToOne

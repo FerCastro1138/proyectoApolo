@@ -16,7 +16,7 @@ public class Campus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "nombre", length = 25)
+    @Column(name = "nombre", length = 25, nullable = false)
     private String nombre;
 
     @ManyToMany(mappedBy = "campusList")

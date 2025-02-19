@@ -16,11 +16,11 @@ public class Visit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "folio", length = 8)
+    @Column(name = "folio", length = 8, nullable = false, unique = true)
     private String folio;
-    @Column(name = "next_visit")
+    @Column(name = "next_visit", nullable = true)
     private LocalDateTime nextVisit;
-    @Column(name = "hour")
+    @Column(name = "hour", nullable = true)
     private LocalTime hour;
 
     @ManyToOne

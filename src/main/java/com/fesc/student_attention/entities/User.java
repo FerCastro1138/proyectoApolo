@@ -17,25 +17,27 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(name = "first_name", length = 29)
+    @Column(name = "first_name", length = 29, nullable = false)
     private String firstName;
-    @Column(name = "middle_name", length = 29)
+    @Column(name = "middle_name", length = 29, nullable = true)
     private String middleName;
-    @Column(name = "last_name", length = 29)
+    @Column(name = "last_name", length = 29, nullable = false)
     private String lastName;
-    @Column(name = "second_last_name", length = 29)
+    @Column(name = "second_last_name", length = 29, nullable = false)
     private String secondLastName;
-    @Column(name = "email", length = 254)
+    @Column(name = "email", length = 254, nullable = false)
     private String email;
+    @Column(name = "key", length = 8, nullable = false)
+    private String key;
     @Column(name = "password", length = 255, nullable = false)
     private String password;
-    @Column(name = "address", length = 100)
+    @Column(name = "address", length = 100, nullable = false)
     private String address;
-    @Column(name = "gender", length = 10)
+    @Column(name = "gender", length = 10, nullable = false)
     private String gender;
-    @Column(name = "date_of_birth", columnDefinition = "DATE")
+    @Column(name = "date_of_birth", columnDefinition = "DATE", nullable = false)
     private LocalDate dateOfBirth;
-    @Column(name = "number" , length = 10)
+    @Column(name = "number" , length = 10, nullable = false)
     private String number;
 
     @ManyToOne

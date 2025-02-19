@@ -13,13 +13,13 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "day_of_week", length = 15)
+    @Column(name = "day_of_week", length = 15, nullable = false)
     private String dayOfWeek;
-    @Column(name = "sart_hour", length = 10)
+    @Column(name = "sart_hour", length = 10, nullable = false)
     private String startHour;
-    @Column(name = "finish_hour", length = 10)
+    @Column(name = "finish_hour", length = 10, nullable = false)
     private String finishHour;
-    @Column(name = "availability")
+    @Column(name = "availability", nullable = false)
     private boolean availability;
 
     @ManyToOne

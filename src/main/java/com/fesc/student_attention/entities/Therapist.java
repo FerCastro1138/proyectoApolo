@@ -16,9 +16,9 @@ public class Therapist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", length = 60)
+    @Column(name = "name", length = 60, nullable = false)
     private String name;
-    @Column(name = "email", length = 254)
+    @Column(name = "email", length = 254, nullable = false)
     private String email;
     @Column(name = "password", length = 255, nullable = false)
     private String password;
