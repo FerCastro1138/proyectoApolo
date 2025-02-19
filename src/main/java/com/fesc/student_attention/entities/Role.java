@@ -9,6 +9,7 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "roles", unique = true, nullable = false)
     private RoleName roleName;

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -14,6 +16,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     @Column(name = "first_name", length = 29)
     private String firstName;
     @Column(name = "middle_name", length = 29)
@@ -34,11 +37,17 @@ public class User {
     private LocalDate dateOfBirth;
     @Column(name = "number" , length = 10)
     private String number;
+
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
+    @ManyToOne
     @JoinColumn(name = "status_id", nullable = false)
-    private int statusId;
-    @JoinColumn(name = "campus_id", nullable = false)
-    private int campusId;
+    private Status status;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Campus campus;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Visist> visistList = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Expedient> expedientList = new ArrayList<>();
 }

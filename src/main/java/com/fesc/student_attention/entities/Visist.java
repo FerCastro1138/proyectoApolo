@@ -15,16 +15,21 @@ public class Visist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "folio", length = 8)
     private String folio;
     @Column(name = "next_visit")
     private LocalDateTime nextVisit;
     @Column(name = "hour")
     private LocalTime hour;
+
+    @ManyToOne
     @JoinColumn(name = "therapist_id", nullable = false)
-    private int therapisId;
-    @JoinColumn(name = "patient_id", nullable = false)
-    private int patientID;
+    private Therapist therapist;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+    @ManyToOne
     @JoinColumn(name = "expedient_id", nullable = false)
-    private int expedientID;
+    private Expedient expedient;
 }

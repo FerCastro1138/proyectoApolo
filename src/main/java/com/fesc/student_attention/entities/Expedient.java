@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Type;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -16,13 +18,21 @@ public class Expedient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "folio", length = 8)
     private String folio;
     @Type(JsonType.class)
     @Column(name = "form_answers", columnDefinition = "json")
     private Map<String, Object> formAnswers;
-    @JoinColumn(name = "patient_id", nullable = false)
-    private int patientID;
+    @Column(name = "average")
+    private int average;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+    @ManyToOne
     @JoinColumn(name = "prioirty_id", nullable = false)
-    private int priorityId;
+    private Priority priority;
+    @OneToMany(mappedBy = "expedient", orphanRemoval = true)
+    private List<Visist> visistList = new ArrayList<>();
 }
