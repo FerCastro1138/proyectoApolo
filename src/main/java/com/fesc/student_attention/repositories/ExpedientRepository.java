@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ExpedientRepository extends CrudRepository<Expedient, Integer> {
-    Optional<Expedient> findExpedientById();
+    Optional<Expedient> findExpedientById(int id);
 
 }
